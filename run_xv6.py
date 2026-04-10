@@ -23,8 +23,15 @@ cache_hierarchy = PrivateL1CacheHierarchy(
 memory = SingleChannelDDR3_1600("256MiB")
 
 # 3. Instantiate the processor (Simple timing CPU, single core)
+'''
 processor = SimpleProcessor(
     cpu_type=CPUTypes.MINOR,
+    isa=ISA.RISCV,
+    num_cores=3
+)
+'''
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.ATOMIC,
     isa=ISA.RISCV,
     num_cores=3
 )
