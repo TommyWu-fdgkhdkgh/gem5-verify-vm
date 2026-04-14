@@ -67,10 +67,10 @@ else:
         l1i_size="16KiB"
     )
 
-# 2. Instantiate the memory system (256MB is needed for gem5's DTB placement)
+# 2. Instantiate the memory system
 memory = SingleChannelDDR3_1600("256MiB")
 
-# 3. Instantiate the processor (Simple timing CPU, single core)
+# 3. Instantiate the processor
 print(f"num-cores : {args.num_cores}")
 if args.cpu_type == "atomic":
     print("cpy_type : atomic")
@@ -105,8 +105,6 @@ board = RiscvBoard(
 )
 
 # 5. Set the workload
-# We pass the xv6 kernel and the filesystem image.
-# We explicitly set bootloader to empty so the board loads the kernel at 0x80000000.
 if args.kernel_type == "xv6-riscv":
     kernel = BinaryResource("xv6-riscv/kernel/kernel")
     disk_image = DiskImageResource("xv6-riscv/fs.img")
