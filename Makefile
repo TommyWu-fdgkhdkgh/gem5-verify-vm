@@ -147,9 +147,12 @@ qemu/run/linux/SV57:
 ##########################
 #########  gem5 ##########
 ##########################
+.PHONY: gem5/clone
+gem5/clone:
+	@ git clone git@github.com:gem5/gem5.git
+
 .PHONY: gem5/build
 gem5/build:
-	@ git clone git@github.com:gem5/gem5.git
 	@ cd gem5 && git checkout 7a2b0e413d06c5ce7097104abef3b1d9eaabca91 
 	@ cd gem5 && scons build/RISCV/gem5.opt -j$(shell nproc)
 
