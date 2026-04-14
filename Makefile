@@ -149,7 +149,7 @@ qemu/run/linux/SV57:
 ##########################
 .PHONY: gem5/clone
 gem5/clone:
-	@ git clone git@github.com:gem5/gem5.git
+	@ git clone -b upstream-vm-mode-2026-04-14 https://github.com/TommyWu-fdgkhdkgh/gem5.git
 
 .PHONY: gem5/build
 gem5/build:
