@@ -153,7 +153,6 @@ gem5/clone:
 
 .PHONY: gem5/build
 gem5/build:
-	@ cd gem5 && git checkout 7a2b0e413d06c5ce7097104abef3b1d9eaabca91 
 	@ cd gem5 && scons build/RISCV/gem5.opt -j$(shell nproc)
 
 .PHONY: gem5/term
